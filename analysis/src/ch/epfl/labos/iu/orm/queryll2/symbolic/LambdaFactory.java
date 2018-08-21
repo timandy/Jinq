@@ -1,10 +1,10 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import java.util.List;
+import jdk.internal.org.objectweb.asm.Handle;
+import jdk.internal.org.objectweb.asm.Opcodes;
+import jdk.internal.org.objectweb.asm.Type;
 
-import org.jinq.rebased.org.objectweb.asm.Handle;
-import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.Type;
+import java.util.List;
 
 public class LambdaFactory extends TypedValue
 {
@@ -73,13 +73,8 @@ public class LambdaFactory extends TypedValue
             return false;
       } else if (!capturedArgs.equals(other.capturedArgs))
          return false;
-      if (lambdaMethod == null)
-      {
-         if (other.lambdaMethod != null)
-            return false;
-      } else if (!lambdaMethod.equals(other.lambdaMethod))
-         return false;
-      return true;
+      return lambdaMethod == null
+              ? other.lambdaMethod == null
+              : lambdaMethod.equals(other.lambdaMethod);
    }
-
 }

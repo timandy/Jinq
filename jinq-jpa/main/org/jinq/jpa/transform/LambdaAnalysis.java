@@ -1,16 +1,5 @@
 package org.jinq.jpa.transform;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import org.jinq.rebased.org.objectweb.asm.Handle;
-import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.Type;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-
 import ch.epfl.labos.iu.orm.queryll2.path.MethodAnalysisResults;
 import ch.epfl.labos.iu.orm.queryll2.path.PathAnalysisFactory;
 import ch.epfl.labos.iu.orm.queryll2.path.PathAnalysisSimplifier;
@@ -19,8 +8,17 @@ import ch.epfl.labos.iu.orm.queryll2.symbolic.BasicSymbolicInterpreter.Operation
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodCallValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
-
 import com.user00.thunk.SerializedLambda;
+import jdk.internal.org.objectweb.asm.Handle;
+import jdk.internal.org.objectweb.asm.Opcodes;
+import jdk.internal.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Holds analysis information about the code for a lambda.

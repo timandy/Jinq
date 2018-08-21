@@ -1,12 +1,5 @@
 package org.jinq.jpa.transform;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-
 import ch.epfl.labos.iu.orm.queryll2.path.MethodAnalysisResults;
 import ch.epfl.labos.iu.orm.queryll2.path.MethodSideEffect;
 import ch.epfl.labos.iu.orm.queryll2.path.MethodSideEffectCall;
@@ -17,6 +10,12 @@ import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue.ThisValue;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ScalaJPQLQueryTransformConfiguration extends
       JPQLQueryTransformConfiguration

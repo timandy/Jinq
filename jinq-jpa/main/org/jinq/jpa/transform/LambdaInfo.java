@@ -1,10 +1,9 @@
 package org.jinq.jpa.transform;
 
-import java.lang.reflect.Field;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
-
 import com.user00.thunk.SerializedLambda;
+import jdk.internal.org.objectweb.asm.Type;
+
+import java.lang.reflect.Field;
 
 /**
  * Holds surface information about a lambda such as the parameters to the 

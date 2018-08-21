@@ -3,7 +3,7 @@
  */
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import org.jinq.rebased.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.Type;
 
 public class ConstantValue extends TypedValue
 {

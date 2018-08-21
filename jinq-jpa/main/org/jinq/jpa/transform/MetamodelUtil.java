@@ -1,5 +1,15 @@
 package org.jinq.jpa.transform;
 
+import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
+import jdk.internal.org.objectweb.asm.Type;
+
+import javax.persistence.metamodel.EmbeddableType;
+import javax.persistence.metamodel.IdentifiableType;
+import javax.persistence.metamodel.ManagedType;
+import javax.persistence.metamodel.PluralAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Member;
@@ -13,18 +23,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javax.persistence.metamodel.EmbeddableType;
-import javax.persistence.metamodel.IdentifiableType;
-import javax.persistence.metamodel.ManagedType;
-import javax.persistence.metamodel.PluralAttribute;
-import javax.persistence.metamodel.SingularAttribute;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
-
-import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
 
 /**
  * Provides helper methods for extracting useful information from
@@ -190,9 +188,9 @@ public abstract class MetamodelUtil
             if (tupleIndex.getParameterCount() != 0)
                throw new IllegalArgumentException("Method for reading a value from a custom tuple must not take any arguments");
             MethodSignature sig = new MethodSignature(
-                  org.jinq.rebased.org.objectweb.asm.Type.getInternalName(tupleIndex.getDeclaringClass()),
-                  tupleIndex.getName(),
-                  org.jinq.rebased.org.objectweb.asm.Type.getMethodDescriptor(tupleIndex));
+                    Type.getInternalName(tupleIndex.getDeclaringClass()),
+                    tupleIndex.getName(),
+                    Type.getMethodDescriptor(tupleIndex));
             customTupleAccessorMethods.put(sig, idx);
             safeMethods.add(sig);
             idx++;

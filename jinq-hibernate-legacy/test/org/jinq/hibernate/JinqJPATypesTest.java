@@ -1,7 +1,17 @@
 package org.jinq.hibernate;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.jinq.hibernate.test.entities.CreditCard;
+import org.jinq.hibernate.test.entities.Customer;
+import org.jinq.hibernate.test.entities.Item;
+import org.jinq.hibernate.test.entities.ItemType;
+import org.jinq.hibernate.test.entities.Lineorder;
+import org.jinq.hibernate.test.entities.PhoneNumber;
+import org.jinq.hibernate.test.entities.Sale;
+import org.jinq.hibernate.test.entities.Supplier;
+import org.jinq.jpa.JPQL;
+import org.jinq.orm.stream.JinqStream;
+import org.jinq.tuples.Pair;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -25,19 +35,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import org.hibernate.exception.SQLGrammarException;
-import org.jinq.hibernate.test.entities.CreditCard;
-import org.jinq.hibernate.test.entities.Customer;
-import org.jinq.hibernate.test.entities.Item;
-import org.jinq.hibernate.test.entities.ItemType;
-import org.jinq.hibernate.test.entities.Lineorder;
-import org.jinq.hibernate.test.entities.PhoneNumber;
-import org.jinq.hibernate.test.entities.Sale;
-import org.jinq.hibernate.test.entities.Supplier;
-import org.jinq.jpa.JPQL;
-import org.jinq.orm.stream.JinqStream;
-import org.jinq.tuples.Pair;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class JinqJPATypesTest extends JinqJPATestBase
 {
@@ -49,7 +48,7 @@ public class JinqJPATypesTest extends JinqJPATestBase
             .where(c -> c.getCountry().equals(val) || c.getName().equals("Alice"))
             .select(c -> new Pair<>(c, c.getName()))
             .toList();
-      customers = customers.stream().sorted((a, b) -> a.getOne().getName().compareTo(b.getOne().getName())).collect(Collectors.toList());
+      customers = customers.stream().sorted(Comparator.comparing(a -> a.getOne().getName())).collect(Collectors.toList());
       assertEquals("SELECT A, A.name FROM org.jinq.hibernate.test.entities.Customer A WHERE A.country = :param0 OR A.name = 'Alice'", query);
       assertEquals(2, customers.size());
       assertEquals("Alice", customers.get(0).getTwo());
@@ -190,7 +189,7 @@ public class JinqJPATypesTest extends JinqJPATestBase
             .where(s -> s.getCalendar().before(val) || s.getCalendar().equals(val2))
             .select(s -> new Pair<>(s.getCustomer(), s.getCalendar()))
             .toList();
-      sales = sales.stream().sorted((a, b) -> a.getTwo().compareTo(b.getTwo())).collect(Collectors.toList());
+      sales = sales.stream().sorted(Comparator.comparing(Pair::getTwo)).collect(Collectors.toList());
       assertEquals("SELECT A.customer, A.calendar FROM org.jinq.hibernate.test.entities.Sale A WHERE A.calendar < :param0 OR A.calendar = :param1", query);
       assertEquals(2, sales.size());
       assertEquals("Dave", sales.get(0).getOne().getName());

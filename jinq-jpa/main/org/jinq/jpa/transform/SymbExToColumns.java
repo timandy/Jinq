@@ -1,13 +1,16 @@
 package org.jinq.jpa.transform;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-
+import ch.epfl.labos.iu.orm.queryll2.path.Annotations;
+import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue.NullConstant;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.LambdaFactory;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodCallValue;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitor;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jinq.jpa.jpqlquery.BinaryExpression;
 import org.jinq.jpa.jpqlquery.ColumnExpressions;
 import org.jinq.jpa.jpqlquery.ConstantExpression;
@@ -25,18 +28,14 @@ import org.jinq.jpa.jpqlquery.SimpleRowReader;
 import org.jinq.jpa.jpqlquery.SubqueryExpression;
 import org.jinq.jpa.jpqlquery.TupleRowReader;
 import org.jinq.jpa.jpqlquery.UnaryExpression;
-import org.jinq.rebased.org.objectweb.asm.Type;
 
-import ch.epfl.labos.iu.orm.queryll2.path.Annotations;
-import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue.NullConstant;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.LambdaFactory;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodCallValue;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitor;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class SymbExToColumns extends TypedValueVisitor<SymbExPassDown, ColumnExpressions<?>, TypedValueVisitorException>
 {

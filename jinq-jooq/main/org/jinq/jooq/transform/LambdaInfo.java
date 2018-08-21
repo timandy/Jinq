@@ -1,16 +1,14 @@
 package org.jinq.jooq.transform;
 
-import java.io.IOException;
-import java.util.Collections;
-
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-
 import ch.epfl.labos.iu.orm.queryll2.path.MethodAnalysisResults;
 import ch.epfl.labos.iu.orm.queryll2.path.PathAnalysisFactory;
 import ch.epfl.labos.iu.orm.queryll2.path.PathAnalysisSimplifier;
 import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
-
 import com.user00.thunk.SerializedLambda;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+
+import java.io.IOException;
+import java.util.Collections;
 
 /**
  * Holds a lambda as well as any additional information about it

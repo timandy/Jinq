@@ -1,13 +1,7 @@
 package org.jinq.jpa;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.util.Optional;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.metamodel.Metamodel;
-
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jinq.jpa.jpqlquery.JPQLQuery;
 import org.jinq.jpa.transform.JPAQueryComposerCache;
 import org.jinq.jpa.transform.JPQLQueryTransformConfigurationFactory;
@@ -18,7 +12,12 @@ import org.jinq.jpa.transform.MetamodelUtilFromMetamodel;
 import org.jinq.orm.stream.InQueryStreamSource;
 import org.jinq.orm.stream.JinqStream;
 
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.metamodel.Metamodel;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.util.Optional;
 
 /**
  * Creates JinqStreams of JPA entities. 
@@ -99,9 +98,9 @@ public class JinqJPAStreamProvider
       MetamodelUtilAttribute attrib = new MetamodelUtilAttribute(fieldName, true);
       metamodel.insertAssociationAttribute(
             new MethodSignature(
-                  org.jinq.rebased.org.objectweb.asm.Type.getInternalName(m.getDeclaringClass()),
+                    Type.getInternalName(m.getDeclaringClass()),
                   m.getName(),
-                  org.jinq.rebased.org.objectweb.asm.Type.getMethodDescriptor(m)),
+                    Type.getMethodDescriptor(m)),
             attrib, isPlural);
    }
    
@@ -119,9 +118,9 @@ public class JinqJPAStreamProvider
       MetamodelUtilAttribute attrib = new MetamodelUtilAttribute(fieldName, true);
       metamodel.insertAssociationAttribute(
             new MethodSignature(
-                  org.jinq.rebased.org.objectweb.asm.Type.getInternalName(methodClass),
+                    Type.getInternalName(methodClass),
                   m.getName(),
-                  org.jinq.rebased.org.objectweb.asm.Type.getMethodDescriptor(m)),
+                    Type.getMethodDescriptor(m)),
             attrib, isPlural);
    }
    

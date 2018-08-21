@@ -1,20 +1,19 @@
 package org.jinq.jpa.transform;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
+import ch.epfl.labos.iu.orm.queryll2.path.Annotations;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jinq.jpa.jpqlquery.ColumnExpressions;
 import org.jinq.jpa.jpqlquery.JPQLQuery;
 import org.jinq.jpa.jpqlquery.ParameterAsQuery;
 import org.jinq.jpa.jpqlquery.ParameterExpression;
 import org.jinq.jpa.jpqlquery.ParameterFieldExpression;
 import org.jinq.jpa.jpqlquery.SimpleRowReader;
-import org.jinq.rebased.org.objectweb.asm.Type;
 
-import ch.epfl.labos.iu.orm.queryll2.path.Annotations;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Handles the lookup of parameters passed to a lambda. Parameters can

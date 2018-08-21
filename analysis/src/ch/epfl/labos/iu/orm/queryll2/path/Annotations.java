@@ -1,12 +1,11 @@
 package ch.epfl.labos.iu.orm.queryll2.path;
 
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import jdk.internal.org.objectweb.asm.Type;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.Collection;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
-
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 
 public class Annotations
 {

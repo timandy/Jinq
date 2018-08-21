@@ -1,15 +1,5 @@
 package org.jinq.jpa.transform;
 
-import org.jinq.jpa.jpqlquery.ColumnExpressions;
-import org.jinq.jpa.jpqlquery.Expression;
-import org.jinq.jpa.jpqlquery.From;
-import org.jinq.jpa.jpqlquery.FromAliasExpression;
-import org.jinq.jpa.jpqlquery.JPQLQuery;
-import org.jinq.jpa.jpqlquery.ReadFieldExpression;
-import org.jinq.jpa.jpqlquery.SelectFromWhere;
-import org.jinq.jpa.jpqlquery.SimpleRowReader;
-import org.jinq.rebased.org.objectweb.asm.Type;
-
 import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.LambdaFactory;
@@ -18,6 +8,15 @@ import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitor;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
+import org.jinq.jpa.jpqlquery.ColumnExpressions;
+import org.jinq.jpa.jpqlquery.Expression;
+import org.jinq.jpa.jpqlquery.From;
+import org.jinq.jpa.jpqlquery.FromAliasExpression;
+import org.jinq.jpa.jpqlquery.JPQLQuery;
+import org.jinq.jpa.jpqlquery.ReadFieldExpression;
+import org.jinq.jpa.jpqlquery.SelectFromWhere;
+import org.jinq.jpa.jpqlquery.SimpleRowReader;
 
 public class SymbExToSubQuery extends TypedValueVisitor<SymbExPassDown, JPQLQuery<?>, TypedValueVisitorException>
 {

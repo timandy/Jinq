@@ -1,13 +1,12 @@
 package ch.epfl.labos.iu.orm.queryll2.path;
 
-import org.jinq.rebased.org.objectweb.asm.Type;
-
 import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodCallValue.StaticMethodCallValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue.GetStaticFieldValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueRewriterWalker;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitor;
+import jdk.internal.org.objectweb.asm.Type;
 
 /**
  * Java uses integers for booleans. This rewriter will rewrite integer

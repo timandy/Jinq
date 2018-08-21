@@ -1,21 +1,20 @@
 package ch.epfl.labos.iu.orm.queryll2.path;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.tree.AbstractInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.ClassNode;
-import org.jinq.rebased.org.objectweb.asm.tree.JumpInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.LookupSwitchInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.MethodNode;
-import org.jinq.rebased.org.objectweb.asm.tree.TableSwitchInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-
 import ch.epfl.labos.iu.orm.queryll2.symbolic.BasicSymbolicInterpreter;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.FrameWithHelpers;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.SymbolicInterpreterWithFieldAccess;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
+import jdk.internal.org.objectweb.asm.Opcodes;
+import jdk.internal.org.objectweb.asm.tree.AbstractInsnNode;
+import jdk.internal.org.objectweb.asm.tree.ClassNode;
+import jdk.internal.org.objectweb.asm.tree.JumpInsnNode;
+import jdk.internal.org.objectweb.asm.tree.LookupSwitchInsnNode;
+import jdk.internal.org.objectweb.asm.tree.MethodNode;
+import jdk.internal.org.objectweb.asm.tree.TableSwitchInsnNode;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CodePath
@@ -115,8 +114,8 @@ public class CodePath
    }
    
    public <T> PathAnalysis calculateReturnValueAndConditions(
-         ClassNode cl, MethodNode m,
-         final PathAnalysisMethodChecker methodChecker) throws AnalyzerException
+           ClassNode cl, MethodNode m,
+           final PathAnalysisMethodChecker methodChecker) throws AnalyzerException
    {
       class ConditionRecorder implements BasicSymbolicInterpreter.BranchHandler
       {

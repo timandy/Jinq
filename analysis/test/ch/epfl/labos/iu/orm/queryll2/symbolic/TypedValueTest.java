@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.jinq.rebased.org.objectweb.asm.Handle;
 import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.Type;
 import org.junit.Assert;
 import org.junit.Test;
 

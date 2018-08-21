@@ -1,9 +1,9 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
+import jdk.internal.org.objectweb.asm.Type;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
 
 public class MethodSignature
 {

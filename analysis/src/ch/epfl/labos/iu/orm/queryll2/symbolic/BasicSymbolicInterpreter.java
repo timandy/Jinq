@@ -1,23 +1,22 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.jinq.rebased.org.objectweb.asm.Handle;
-import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.Type;
-import org.jinq.rebased.org.objectweb.asm.tree.AbstractInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.FieldInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.IntInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.InvokeDynamicInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.LdcInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.MethodInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.TypeInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Value;
-
 import ch.epfl.labos.iu.orm.queryll2.path.MethodSideEffect;
 import ch.epfl.labos.iu.orm.queryll2.path.MethodSideEffectCall;
+import jdk.internal.org.objectweb.asm.Handle;
+import jdk.internal.org.objectweb.asm.Opcodes;
+import jdk.internal.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.tree.AbstractInsnNode;
+import jdk.internal.org.objectweb.asm.tree.FieldInsnNode;
+import jdk.internal.org.objectweb.asm.tree.IntInsnNode;
+import jdk.internal.org.objectweb.asm.tree.InvokeDynamicInsnNode;
+import jdk.internal.org.objectweb.asm.tree.LdcInsnNode;
+import jdk.internal.org.objectweb.asm.tree.MethodInsnNode;
+import jdk.internal.org.objectweb.asm.tree.TypeInsnNode;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class BasicSymbolicInterpreter extends InterpreterWithArgs implements Opcodes

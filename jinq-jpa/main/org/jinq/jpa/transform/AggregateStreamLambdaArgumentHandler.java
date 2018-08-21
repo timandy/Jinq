@@ -1,10 +1,9 @@
 package org.jinq.jpa.transform;
 
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jinq.jpa.jpqlquery.JPQLQuery;
 import org.jinq.jpa.jpqlquery.SelectOnly;
-import org.jinq.rebased.org.objectweb.asm.Type;
-
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
 
 /**
  * Handles the lookup of parameters passed to a lambda. Parameters can

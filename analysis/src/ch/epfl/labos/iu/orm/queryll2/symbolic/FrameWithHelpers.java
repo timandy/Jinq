@@ -1,11 +1,11 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import org.jinq.rebased.org.objectweb.asm.Opcodes;
-import org.jinq.rebased.org.objectweb.asm.Type;
-import org.jinq.rebased.org.objectweb.asm.tree.ClassNode;
-import org.jinq.rebased.org.objectweb.asm.tree.MethodNode;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Frame;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Value;
+import jdk.internal.org.objectweb.asm.Opcodes;
+import jdk.internal.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.tree.ClassNode;
+import jdk.internal.org.objectweb.asm.tree.MethodNode;
+import jdk.internal.org.objectweb.asm.tree.analysis.Frame;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
 // A version of ASM's Frame with some helper methods.
 

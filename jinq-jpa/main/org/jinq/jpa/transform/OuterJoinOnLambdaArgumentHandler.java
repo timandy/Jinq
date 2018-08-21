@@ -1,13 +1,8 @@
 package org.jinq.jpa.transform;
 
-import org.jinq.jpa.jpqlquery.ColumnExpressions;
-import org.jinq.jpa.jpqlquery.ConstantExpression;
-import org.jinq.jpa.jpqlquery.SelectFromWhere;
-import org.jinq.jpa.jpqlquery.SelectOnly;
-import org.jinq.jpa.jpqlquery.SimpleRowReader;
-import org.jinq.rebased.org.objectweb.asm.Type;
-
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
+import org.jinq.jpa.jpqlquery.ColumnExpressions;
 
 /**
  * Handles the lookup of parameters passed to a lambda. Parameters can

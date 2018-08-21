@@ -1,8 +1,8 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import org.jinq.rebased.org.objectweb.asm.Type;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Interpreter;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Value;
+import jdk.internal.org.objectweb.asm.Type;
+import jdk.internal.org.objectweb.asm.tree.analysis.Interpreter;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
 // This is an extended version of the Interpreter interface that
 // allows the symbolic executor to keep track of method arguments

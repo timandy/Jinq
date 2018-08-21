@@ -1,11 +1,10 @@
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import org.jinq.rebased.org.objectweb.asm.tree.AbstractInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.FieldInsnNode;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.Value;
-
 import ch.epfl.labos.iu.orm.queryll2.path.MethodSideEffectFieldAssign;
+import jdk.internal.org.objectweb.asm.tree.AbstractInsnNode;
+import jdk.internal.org.objectweb.asm.tree.FieldInsnNode;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
 
 public class SymbolicInterpreterWithFieldAccess extends BasicSymbolicInterpreter

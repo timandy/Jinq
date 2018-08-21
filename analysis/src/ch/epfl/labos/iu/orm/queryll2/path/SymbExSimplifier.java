@@ -1,10 +1,5 @@
 package ch.epfl.labos.iu.orm.queryll2.path;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
-
 import ch.epfl.labos.iu.orm.queryll2.symbolic.ConstantValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodCallValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
@@ -12,6 +7,10 @@ import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue.ComparisonValue.ComparisonOp;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValue.MathOpValue.Op;
 import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitor;
+import jdk.internal.org.objectweb.asm.Type;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SymbExSimplifier<I> extends TypedValueVisitor<I, TypedValue, RuntimeException>
 {

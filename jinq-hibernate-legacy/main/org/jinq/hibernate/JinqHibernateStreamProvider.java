@@ -1,11 +1,7 @@
 package org.jinq.hibernate;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-import java.util.Optional;
-
-import javax.persistence.EntityManagerFactory;
-
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import jdk.internal.org.objectweb.asm.Type;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.jinq.hibernate.transform.MetamodelUtilFromSessionFactory;
@@ -19,9 +15,11 @@ import org.jinq.jpa.transform.MetamodelUtilAttribute;
 import org.jinq.jpa.transform.MetamodelUtilFromMetamodel;
 import org.jinq.orm.stream.InQueryStreamSource;
 import org.jinq.orm.stream.JinqStream;
-import org.jinq.rebased.org.objectweb.asm.Type;
 
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import javax.persistence.EntityManagerFactory;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.util.Optional;
 
 /**
  * Creates JinqStreams of JPA entities. 

@@ -1,17 +1,16 @@
 package org.jinq.jooq.transform;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import org.jinq.rebased.org.objectweb.asm.Type;
+import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jooq.Field;
 import org.jooq.Schema;
 import org.jooq.Table;
 
-import ch.epfl.labos.iu.orm.queryll2.path.TransformationClassAnalyzer;
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Provides helper methods for extracting useful information from

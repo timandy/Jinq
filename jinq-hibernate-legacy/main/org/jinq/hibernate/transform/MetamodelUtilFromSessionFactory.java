@@ -1,9 +1,6 @@
 package org.jinq.hibernate.transform;
 
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 import org.hibernate.SessionFactory;
 import org.hibernate.metadata.ClassMetadata;
 import org.hibernate.type.BigDecimalType;
@@ -24,7 +21,9 @@ import org.hibernate.type.descriptor.converter.AttributeConverterTypeAdapter;
 import org.jinq.jpa.transform.MetamodelUtil;
 import org.jinq.jpa.transform.MetamodelUtilAttribute;
 
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MetamodelUtilFromSessionFactory extends MetamodelUtil
 {
@@ -82,9 +81,9 @@ public class MetamodelUtilFromSessionFactory extends MetamodelUtil
          // Try to find the getter method
          Method m = entityClass.getMethod(name);
          MethodSignature sig = new MethodSignature(
-               org.jinq.rebased.org.objectweb.asm.Type.getInternalName(entityClass),
-               m.getName(),
-               org.jinq.rebased.org.objectweb.asm.Type.getMethodDescriptor(m)); 
+                 jdk.internal.org.objectweb.asm.Type.getInternalName(entityClass),
+                 m.getName(),
+                 jdk.internal.org.objectweb.asm.Type.getMethodDescriptor(m));
          
          MetamodelUtilAttribute attrib = new MetamodelUtilAttribute(fieldName, true);
          

@@ -1,18 +1,17 @@
 package org.jinq.jooq.transform;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import jdk.internal.org.objectweb.asm.Type;
 import org.jinq.jooq.querygen.ColumnExpressions;
 import org.jinq.jooq.querygen.SimpleRowReader;
 import org.jinq.jooq.querygen.TableRowReader;
 import org.jooq.Field;
 import org.jooq.Table;
 import org.jooq.impl.DSL;
-import org.jinq.rebased.org.objectweb.asm.Type;
 
-import ch.epfl.labos.iu.orm.queryll2.symbolic.TypedValueVisitorException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Handles the lookup of parameters passed to a lambda. Parameters can

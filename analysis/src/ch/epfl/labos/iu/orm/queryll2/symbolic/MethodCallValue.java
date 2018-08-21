@@ -3,9 +3,9 @@
  */
 package ch.epfl.labos.iu.orm.queryll2.symbolic;
 
-import java.util.List;
+import jdk.internal.org.objectweb.asm.Type;
 
-import org.jinq.rebased.org.objectweb.asm.Type;
+import java.util.List;
 
 public class MethodCallValue extends TypedValue
 {

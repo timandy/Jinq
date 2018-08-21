@@ -1,5 +1,16 @@
 package ch.epfl.labos.iu.orm.queryll2.path;
 
+import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
+import jdk.internal.org.objectweb.asm.ClassReader;
+import jdk.internal.org.objectweb.asm.tree.ClassNode;
+import jdk.internal.org.objectweb.asm.tree.MethodNode;
+import jdk.internal.org.objectweb.asm.tree.analysis.AnalyzerException;
+import org.jinq.orm.annotations.EntitySupplier;
+import org.jinq.orm.annotations.NoSideEffects;
+import org.jinq.tuples.Tuple6;
+import org.jinq.tuples.Tuple7;
+import org.jinq.tuples.Tuple8;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,18 +29,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.jinq.orm.annotations.EntitySupplier;
-import org.jinq.orm.annotations.NoSideEffects;
-import org.jinq.rebased.org.objectweb.asm.ClassReader;
-import org.jinq.rebased.org.objectweb.asm.tree.ClassNode;
-import org.jinq.rebased.org.objectweb.asm.tree.MethodNode;
-import org.jinq.rebased.org.objectweb.asm.tree.analysis.AnalyzerException;
-import org.jinq.tuples.Tuple6;
-import org.jinq.tuples.Tuple7;
-import org.jinq.tuples.Tuple8;
-
-import ch.epfl.labos.iu.orm.queryll2.symbolic.MethodSignature;
 
 public class TransformationClassAnalyzer
 {
